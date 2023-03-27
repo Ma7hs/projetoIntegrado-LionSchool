@@ -85,12 +85,12 @@ const getAlunosCurso = (curso) => {
       if (cursoAluno == "RDS") {
         alunosRDS.push(aluno.nome);
         alunosJson = {
-          alunos: alunosRDS,
+          alunos_redes: alunosRDS,
         };
       } else if (cursoAluno == "DS") {
         alunosDS.push(aluno.nome);
         alunosJson = {
-          alunos: alunosDS,
+          alunos_ds: alunosDS,
         };
       }
     }
@@ -134,4 +134,12 @@ const getStatus = (status) => {
   } else {
     return funStatus;
   }
+};
+
+module.exports = {
+  getStatus,
+  getAlunosCurso,
+  getAlunoMatricula,
+  getListaAlunos,
+  getCursos,
 };
