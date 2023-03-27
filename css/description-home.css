@@ -1,0 +1,41 @@
+.description-home{
+    display: flex;
+    grid-area: content;
+    gap: 44px;
+    flex-direction: column;
+    margin-top: 12%;
+    margin-left: 96px;
+
+}
+.colorCurso{
+    color: #3347B0;
+    font-weight: 700;
+    font-size: 57.38px;
+    line-height: 67.24px;
+}
+.description__text {
+    display: flex;
+    font-weight: 300;
+    color: black;
+    line-height: 67.24px; 
+    font-size: 57.38px;
+    font-family: 'Roboto', sans-serif;
+}
+.text{
+    display: flex;
+    font-weight: 300;
+    color: black;
+    line-height: 67.24px; 
+    font-size: 57.38px;
+    font-family: 'Roboto', sans-serif;
+}
+.description__image{
+    display: flex;
+    width: 436px;
+    height: 262px;
+}
+.studant{
+    display: flex;
+   grid-area: content;
+   margin-top: 15%;
+}
