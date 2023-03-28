@@ -15,13 +15,50 @@ app.use((request, response, next) => {
 
 app.get('/v1/lion-school/cursos', cors(), async function (request, response, next) {
     let listCursos = lionSchool.getCursos()
+    let cursos = {}
+    let statusCode
     if (listCursos) {
-        response.json(listCursos);  
-        response.status(200);
+        cursos = listCursos;
+        statusCode = 200
     } else {
-        response.status(500)
+        statusCode = 400
     }
+    response.status(statusCode)
+    response.json(cursos)
+
 })
+
+app.get('/v1/lion-school/alunos', cors(), async function (request, response, next) {
+    let listAlunos = lionSchool.getListaAlunos()
+    let alunos = {}
+    let statusCode
+    if (listAlunos) {
+        alunos = listAlunos;
+        statusCode = 200
+    } else {
+        statusCode = 400
+    }
+    response.status(statusCode)
+    response.json(alunos)
+
+})
+
+app.get(`/v1/lion-school/alunos/:matricula`, cors(), async function (request, response, next) {
+    let matricula = request.params.matricula
+    let aluno = lionSchool.getAlunoMatricula(matricula)
+    let info_aluno = {}
+    let statusCode
+    if (aluno) {
+        info_aluno = aluno;
+        statusCode = 200
+    } else {
+        statusCode = 400
+    }
+    response.status(statusCode)
+    response.json(info_aluno)
+
+})
+
 
 app.listen(8080, function () {
     console.log('Servidor Lion School Agurdando Resquisições na porta 8080')
