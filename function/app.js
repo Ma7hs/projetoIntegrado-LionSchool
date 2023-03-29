@@ -43,13 +43,7 @@ const getAlunoMatricula = (matricula) => {
 
   alunos.alunos.forEach((aluno) => {
     if (matricula == aluno.matricula) {
-      let infoCurso = aluno.curso.map((curso) => {
-        let cursoNome = {
-          sigla: curso.sigla,
-          nome: curso.nome,
-        };
-        return cursoNome;
-      });
+      let infoCurso = aluno.curso[0].nome
       let infoAluno = {
         nome: aluno.nome,
         matricula: aluno.matricula,
@@ -103,25 +97,26 @@ const getAlunosCurso = (curso) => {
   }
 };
 
-const getStatus = (status) => {
+
+const getStatusAluno = (status) => {
   let alunosCursando = [];
   let alunosFinalzados = [];
   let alunosJson = {};
   let funStatus = false;
 
   alunos.alunos.forEach((aluno) => {
-    const statusAluno = aluno.status;
+    const statusAluno = aluno.status.toLowerCase();
     if (statusAluno == status) {
-      if (statusAluno == "Cursando") {
+      if (statusAluno == "cursando") {
         alunosCursando.push(aluno.nome);
         alunosJson = {
           alunos_cursando: alunosCursando,
           qntd_alunos: alunosCursando.length,
         };
-      } else if (statusAluno == "Finalizado") {
+      } else if (statusAluno == "finalizado") {
         alunosFinalzados.push(aluno.nome);
         alunosJson = {
-          alunosFinalzados: alunosFinalzados,
+          alunos_finalzados: alunosFinalzados,
           qntd_alunos: alunosFinalzados.length,
         };
       }
@@ -133,13 +128,70 @@ const getStatus = (status) => {
     return alunosJson;
   } else {
     return funStatus;
-  }
+  } 
+
 };
 
+
+const getStatusDisciplina = (matricula) => {
+  let json = {}
+  let status = false
+  alunos.alunos.forEach((aluno) => {
+    if (matricula == aluno.matricula) {
+      aluno.curso.map(curso => {
+        let disciplinas = curso.disciplinas.map(disciplina => {
+          let jsonDisciplinas = {
+            nome: disciplina.nome,
+            media: disciplina.media,
+            status: disciplina.status
+          }
+          return jsonDisciplinas
+        })
+        json = {
+          nome: aluno.nome,
+          matricula: aluno.matricula,
+          curso: aluno.curso[0].nome,
+          disciplinas: disciplinas
+        }
+      })
+      status = true
+    }
+  })
+  if (status == true) {
+    return json
+  } else {
+    return false
+  }
+}
+
+// const teste = (matricula) => {
+//   let json = {}
+//   let status = false
+//   alunos.alunos.forEach((aluno) => {
+//     if (matricula == aluno.matricula) {
+//       json = {
+//         nome: aluno.nome,
+//         matricula: aluno.matricula,
+//         curso: aluno.curso[0].nome,
+//         disciplina: aluno.curso[0].disciplinas
+//       }
+//       status = true
+//     }
+//   })
+//   if (status == true) {
+//     return json
+//   } else {
+//     return false
+//   }
+// }
+
+// console.log(teste(20151001007))
+
 module.exports = {
-  getStatus,
+  getStatusAluno,
   getAlunosCurso,
   getAlunoMatricula,
   getListaAlunos,
   getCursos,
+  getStatusDisciplina
 };

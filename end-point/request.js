@@ -53,21 +53,81 @@ app.get(`/v1/lion-school/alunos/:matricula`, cors(), async function (request, re
     if (matricula == '' || matricula == undefined || matricula.length != 11 || isNaN(matricula)) {
         statusCode = 400
         info_aluno.message = ('Nao foi possivel realizar a requisicao pois deve haver algum erro na matricula')
+    } else {
+        if (aluno) {
+            info_aluno = aluno;
+            statusCode = 200
+        } else {
+            statusCode = 400
+        }
+    }
+    response.status(statusCode)
+    response.json(info_aluno)
+})
+
+app.get(`/v1/lion-school/:curso/alunos`, cors(), async function (request, response, next) {
+    let curso = request.params.curso.toUpperCase()
+    let aluno = lionSchool.getAlunosCurso(curso)
+    let info_curso = {}
+    let statusCode
+    if(curso == '' || curso == undefined || !isNaN(curso)){
+        statusCode = 400
+        info_curso.message = ('Nao foi possivel realizar a requisicao pois deve haver algum erro no momento de informar o curso')
     }else{
-          if (aluno) {
-        info_aluno = aluno;
+        if (aluno) {
+            info_curso = aluno;
+            statusCode = 200
+        } else {
+            statusCode = 400
+        }
+    }
+    response.status(statusCode)
+    response.json(info_curso)   
+})
+
+app.get(`/v1/lion-school/status/alunos/:status`, cors(), async function (request, response, next) {
+    let status = request.params.status  
+    let status_aluno = lionSchool.getStatusAluno(status)
+    let info_status = {}
+    let statusCode
+
+    if(status == '' || status == undefined || !isNaN(status)){
+        statusCode = 400
+        info_status.message = ('Nao foi possivel realizar a requisicao pois deve haver algum erro no momento de informar o curso')
+    }
+
+    if (status_aluno) {
+        info_status = status_aluno;
         statusCode = 200
     } else {
         statusCode = 400
     }
-    }
 
-  
     response.status(statusCode)
-    response.json(info_aluno)
-
+    response.json(info_status)
 })
 
+app.get(`/v1/lion-school/status/disciplinas/:matricula`, cors(), async function (request, response, next) {
+    let matricula = request.params.matricula  
+    let status_aluno = lionSchool.getStatusDisciplina(matricula)
+    let info_status = {}
+    let statusCode
+
+    if(matricula == '' || matricula == undefined || isNaN(matricula) || matricula.length > 11){
+        statusCode = 400
+        info_status.message = ('Nao foi possivel realizar a requisicao pois deve haver algum erro no momento de informar o curso')
+    }
+
+    if (status_aluno) {
+        info_status = status_aluno;
+        statusCode = 200
+    } else {
+        statusCode = 400
+    }
+
+    response.status(statusCode)
+    response.json(info_status)
+})
 
 
 
