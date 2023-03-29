@@ -126,7 +126,7 @@ app.get(`/v1/lion-school/status/disciplinas/:matricula`, cors(), async function 
     }
 
     response.status(statusCode)
-    response.json(info_status)
+    response.json(info_status)  
 })
 
 
