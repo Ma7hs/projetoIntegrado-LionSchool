@@ -9,27 +9,39 @@
 }
 
 body{
+    height: 100vh;
     display: grid;
     grid-template-areas: "content";
     
 }
 
 header{
-    grid-area: content;
-    display: flex;  
+    display: flex;
     background-color: var(--primary-color);
     height: 100px;
-    flex-direction: row; 
 }
 main{
-    grid-area: content;
     display: flex;
+    height: 68%;
     align-items: center;
+    justify-content: center;
+    grid-area: content;
     flex-direction: row;
 }
 
-/* footer{
+footer{
+    display: flex; 
+    font-family: 'Roboto', sans-serif;
+    padding-left: 8.5rem;
+    padding-right: 8.5rem;
+    height: 10.2rem;
+    color: white;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     background-color: var(--primary-color);
-    height: 140px;
-} */
+}
+
+footer p a:hover {
+    font-style: oblique;
+}
