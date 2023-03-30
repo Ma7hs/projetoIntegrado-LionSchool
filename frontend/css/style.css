@@ -8,25 +8,10 @@
     --primary-color:  #3347B0;
 }
 
-body{
-    height: 100vh;
-    display: grid;
-    grid-template-areas: "content";
-    
-}
-
 header{
     display: flex;
     background-color: var(--primary-color);
     height: 100px;
-}
-main{
-    display: flex;
-    height: 68%;
-    align-items: center;
-    justify-content: center;
-    grid-area: content;
-    flex-direction: row;
 }
 
 footer{
