@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+:root{
+    --primary-color:  #3347B0;
+}
+
+header{
+    display: flex;
+    background-color: var(--primary-color);
+    height: 100px;
+}
+
+footer{
+    display: flex; 
+    font-family: 'Roboto', sans-serif;
+    padding-left: 8.5rem;
+    padding-right: 8.5rem;
+    height: 10.2rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+}
+
+footer p a:hover {
+    font-style: oblique;
+}

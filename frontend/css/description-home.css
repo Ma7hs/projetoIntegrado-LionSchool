@@ -1,13 +1,11 @@
 .description-home{
-    display: flex;
     grid-area: content;
-    gap: 44px;
+    gap: 44px; 
+    display: flex;
     flex-direction: column;
-    margin-top: 12%;
-    margin-left: 96px;
-
+    align-items: flex-start;
 }
-.colorCurso{
+.blue-text{
     color: #3347B0;
     font-weight: 700;
     font-size: 57.38px;
@@ -22,10 +20,9 @@
     font-family: 'Roboto', sans-serif;
 }
 .text{
-    display: flex;
+    width: 550px; 
     font-weight: 300;
     color: black;
-    line-height: 67.24px; 
     font-size: 57.38px;
     font-family: 'Roboto', sans-serif;
 }
@@ -34,8 +31,8 @@
     width: 436px;
     height: 262px;
 }
-.studant{
+
+.image-studant{
     display: flex;
-   grid-area: content;
-   margin-top: 15%;
+    margin-right: 35%; 
 }
