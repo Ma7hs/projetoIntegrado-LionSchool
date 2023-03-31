@@ -6,7 +6,13 @@ const getCursos = () => {
   let cursosJson = {};
 
   cursos.cursos.forEach((curso) => {
-    cursosList.push(curso.sigla);
+    let cursos = {
+      nome: curso.nome,
+      sigla: curso.sigla,
+      carga: curso.carga,
+      icone: curso.icone
+    }
+    cursosList.push(cursos);
   });
 
   cursosJson = {
@@ -67,38 +73,58 @@ const getAlunoMatricula = (matricula) => {
   }
 };
 
-const getAlunosCurso = (curso) => {
+const getAlunosCurso = (curso, status) => {
   let alunosJson = {};
   let alunosDS = [];
   let alunosRDS = [];
-  let status = false;
+  let funStatus = false;
 
   alunos.alunos.forEach((aluno) => {
     const cursoAluno = aluno.curso[0].sigla;
-    if (cursoAluno == curso) {
-      if (cursoAluno == "RDS") {
-        alunosRDS.push(aluno.nome);
-        alunosJson = {
-          alunos_redes: alunosRDS,
-        };
-      } else if (cursoAluno == "DS") {
-        alunosDS.push(aluno.nome);
-        alunosJson = {
-          alunos_ds: alunosDS,
-        };
+    const statusAluno = aluno.status;
+    if (curso != undefined && status != undefined) {
+      if (cursoAluno == curso) {
+        if (cursoAluno == "RDS" && statusAluno == status) {
+          alunosRDS.push(aluno.nome);
+          alunosJson = {
+            alunos_redes: alunosRDS,
+            status: aluno.status
+          };
+        } else if (cursoAluno == "DS" && statusAluno == status) {
+          alunosDS.push(aluno.nome);
+          alunosJson = {
+            alunos_ds: alunosDS,
+            status: aluno.status
+          };
+        }
       }
+      funStatus = true;
+    } else if (curso != undefined && status == undefined) {
+      if (cursoAluno == curso) {
+        if (cursoAluno == "RDS") {
+          alunosRDS.push(aluno.nome);
+          alunosJson = {
+            alunos_redes: alunosRDS,
+          };
+        } else if (cursoAluno == "DS") {
+          alunosDS.push(aluno.nome);
+          alunosJson = {
+            alunos_ds: alunosDS,
+          };
+        }
+      }
+      funStatus = true;
     }
-    status = true;
-  });
-  if (status == true) {
+  })
+
+  if (funStatus == true) {
     return alunosJson;
   } else {
-    status;
+    return funStatus;
   }
-};
+} 
 
-
-const getStatusAluno = (status) => {
+const getStatusAluno = (status, ano) => {
   let alunosCursando = [];
   let alunosFinalzados = [];
   let alunosJson = {};
@@ -106,31 +132,57 @@ const getStatusAluno = (status) => {
 
   alunos.alunos.forEach((aluno) => {
     const statusAluno = aluno.status.toLowerCase();
-    if (statusAluno == status) {
-      if (statusAluno == "cursando") {
-        alunosCursando.push(aluno.nome);
-        alunosJson = {
-          alunos_cursando: alunosCursando,
-          qntd_alunos: alunosCursando.length,
-        };
-      } else if (statusAluno == "finalizado") {
-        alunosFinalzados.push(aluno.nome);
-        alunosJson = {
-          alunos_finalzados: alunosFinalzados,
-          qntd_alunos: alunosFinalzados.length,
-        };
+    const anoConclusao = aluno.curso[0].conclusao;
+    if(status != undefined && ano != undefined){
+      if (statusAluno == status) {
+        if (statusAluno == "cursando" && anoConclusao == ano) {
+          alunosCursando.push(aluno.nome);
+          alunosJson = {
+            alunos_cursando: alunosCursando,
+            ano_conclusao: ano,
+            qntd_alunos: alunosCursando.length,
+          };
+        } else if (statusAluno == "finalizado" && anoConclusao == ano) {
+          alunosFinalzados.push({aluno: aluno.nome, ano_conclusao: aluno.curso[0].conclusao});
+          alunosJson = {
+            alunos_finalizados: alunosFinalzados,
+            qntd_alunos: alunosFinalzados.length,
+          };
+        }
+        funStatus = true;
+      }
+    }else{
+      if (statusAluno == status) {
+        if (statusAluno == "cursando") {
+          alunosCursando.push(aluno.nome);
+          alunosJson = {
+            alunos_cursando: alunosCursando,
+            qntd_alunos: alunosCursando.length,
+          };
+        } else if (statusAluno == "finalizado") {
+          alunosFinalzados.push(aluno.nome);
+          alunosJson = {
+            alunos_finalizados: alunosFinalzados,
+            qntd_alunos: alunosFinalzados.length,
+          };
+        }
       }
       funStatus = true;
     }
   });
 
-  if (funStatus == true) {
-    return alunosJson;
-  } else {
-    return funStatus;
-  } 
+
+  
+  return((alunosFinalzados.length != 0) || (alunosCursando.length != 0)) ? alunosJson : false
+  // if (funStatus == true) {
+  //   return alunosJson;
+  // } else {
+  //   return funStatus;
+  // }
 
 };
+
+console.log(getStatusAluno('finalizado', 2029))
 
 
 const getStatusDisciplina = (matricula) => {
@@ -163,29 +215,6 @@ const getStatusDisciplina = (matricula) => {
     return false
   }
 }
-
-// const teste = (matricula) => {
-//   let json = {}
-//   let status = false
-//   alunos.alunos.forEach((aluno) => {
-//     if (matricula == aluno.matricula) {
-//       json = {
-//         nome: aluno.nome,
-//         matricula: aluno.matricula,
-//         curso: aluno.curso[0].nome,
-//         disciplina: aluno.curso[0].disciplinas
-//       }
-//       status = true
-//     }
-//   })
-//   if (status == true) {
-//     return json
-//   } else {
-//     return false
-//   }
-// }
-
-// console.log(teste(20151001007))
 
 module.exports = {
   getStatusAluno,
