@@ -11,5 +11,4 @@ main{
     align-items: center;
     justify-content: center;
     grid-area: content;
-    flex-direction: row;
 }
