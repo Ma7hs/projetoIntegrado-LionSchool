@@ -1,61 +1,42 @@
 'use strict'
-  
-    // import { preencherCard } from "./api.js"
-        import {fetchData} from "./api.js"
-        const allCourses = await fetchData();
-    // let cursos = await preencherCard();
-    // // console.log(cursos)
 
-    const createCard = (curso) => {
-        const card = document.createElement('div')
-        card.classList.add('card')
+import { fetchData, fetchStudent } from "./api.js"
 
-        const sigla = document.createElement('h1')
-        sigla.classList.add('card__name')
-        sigla.textContent = curso.sigla
+const allCourses = await fetchData();
 
-        card.append(sigla)
-        return card
-    }
-    // const criarCardCurso = (curso) => {
-    //     const card = document.createElement ( 'div' )
-    //     card.classList.add( 'card' )
-
-    //     const img = document.createElement ( 'img' )
-    //     img.classList.add( 'card__image' )
-    //     img.src = `./${curso.icone}`
-
-    //     const name = document.createElement ( 'h1' )
-    //     name.classList.add( 'card__name' )
-    //     name.textContent = curso.sigla
-
-    //     card.append(img, name)
-
-    //     return card
-    // }
-
-//     const carregarCards = async () => {
-
-//         // let url = "http://localhost:8080/v1/lion-school/cursos"
-//         // let response = await fetch(url);
-//         // let data = await response.json();
-//         // let cursos = data.cursos;
+var i = 0;
 
 
-//         const container = document.getElementById( 'container' )
-//         const cards = ( criarCardCurso )
+export const createCard = (curso) => {
+    const card = document.createElement('a')
+    card.href = "http://127.0.0.1:5500/frontend/pages/course.html"
+    card.target = 'blank_'
+    card.classList.add('card')
 
-//         container.replaceChildren(...cards)
-//     }
+    const sigla = document.createElement('h1')
+    sigla.classList.add('card__name')
+    sigla.textContent = curso.sigla
 
-// carregarCards()
+    const img = document.createElement('img')
+    img.classList.add('card__image')
+    img.src = curso.icone
 
-    const load = () => {
-        const container = document.getElementById('container-courses')
-        const cursos = allCourses.cursos.map(createCard)
-        container.replaceChildren(...cursos)
+    card.append(img, sigla)
+    card.id = curso.sigla;
 
+    card.onclick = () => {
+        fetchStudent(card.id)
+        var storage = localStorage.setItem('id_card', card.id)
     }
 
-    load()
-    
+    return card
+
+}
+
+const load = () => {
+    const container = document.getElementById('container-courses')
+    const cursos = allCourses.cursos.map(createCard)
+    container.replaceChildren(...cursos)
+}
+
+load()
