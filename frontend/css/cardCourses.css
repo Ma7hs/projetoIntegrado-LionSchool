@@ -12,8 +12,7 @@
     height: 200px;
     justify-content: space-between;
     align-items: center;
-   
-    
+    gap: 50px;
     padding: 25px;
     border: 2px solid #ddd;
     border-radius: 5px;
