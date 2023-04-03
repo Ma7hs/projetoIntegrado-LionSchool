@@ -84,32 +84,41 @@ const getAlunosCurso = (curso, status) => {
     const statusAluno = aluno.status;
     if (curso != undefined && status != undefined) {
       if (cursoAluno == curso) {
+        let infoAluno = {
+          nome: aluno.nome,
+          foto: aluno.foto,
+          status: aluno.status
+        }
         if (cursoAluno == "RDS" && statusAluno == status) {
-          alunosRDS.push(aluno.nome);
+          alunosRDS.push(infoAluno);
           alunosJson = {
-            alunos_redes: alunosRDS,
-            status: aluno.status
+            alunos: alunosRDS,
           };
+
         } else if (cursoAluno == "DS" && statusAluno == status) {
-          alunosDS.push(aluno.nome);
+          alunosDS.push(infoAluno);
           alunosJson = {
-            alunos_ds: alunosDS,
-            status: aluno.status
+            alunos: alunosDS
           };
         }
       }
       funStatus = true;
     } else if (curso != undefined && status == undefined) {
       if (cursoAluno == curso) {
+        let infoAluno = {
+          nome: aluno.nome,
+          foto: aluno.foto,
+          status: aluno.status
+        }
         if (cursoAluno == "RDS") {
-          alunosRDS.push(aluno.nome);
+          alunosRDS.push(infoAluno);
           alunosJson = {
-            alunos_redes: alunosRDS,
+            alunos: alunosRDS,
           };
         } else if (cursoAluno == "DS") {
-          alunosDS.push(aluno.nome);
+          alunosDS.push(infoAluno);
           alunosJson = {
-            alunos_ds: alunosDS,
+            alunos: alunosDS,
           };
         }
       }
@@ -122,7 +131,8 @@ const getAlunosCurso = (curso, status) => {
   } else {
     return funStatus;
   }
-} 
+}
+
 
 const getStatusAluno = (status, ano) => {
   let alunosCursando = [];
@@ -133,7 +143,7 @@ const getStatusAluno = (status, ano) => {
   alunos.alunos.forEach((aluno) => {
     const statusAluno = aluno.status.toLowerCase();
     const anoConclusao = aluno.curso[0].conclusao;
-    if(status != undefined && ano != undefined){
+    if (status != undefined && ano != undefined) {
       if (statusAluno == status) {
         if (statusAluno == "cursando" && anoConclusao == ano) {
           alunosCursando.push(aluno.nome);
@@ -143,7 +153,10 @@ const getStatusAluno = (status, ano) => {
             qntd_alunos: alunosCursando.length,
           };
         } else if (statusAluno == "finalizado" && anoConclusao == ano) {
-          alunosFinalzados.push({aluno: aluno.nome, ano_conclusao: aluno.curso[0].conclusao});
+          alunosFinalzados.push({
+            aluno: aluno.nome,
+            ano_conclusao: aluno.curso[0].conclusao
+          });
           alunosJson = {
             alunos_finalizados: alunosFinalzados,
             qntd_alunos: alunosFinalzados.length,
@@ -151,7 +164,7 @@ const getStatusAluno = (status, ano) => {
         }
         funStatus = true;
       }
-    }else{
+    } else {
       if (statusAluno == status) {
         if (statusAluno == "cursando") {
           alunosCursando.push(aluno.nome);
@@ -172,17 +185,11 @@ const getStatusAluno = (status, ano) => {
   });
 
 
-  
-  return((alunosFinalzados.length != 0) || (alunosCursando.length != 0)) ? alunosJson : false
-  // if (funStatus == true) {
-  //   return alunosJson;
-  // } else {
-  //   return funStatus;
-  // }
+
+  return ((alunosFinalzados.length != 0) || (alunosCursando.length != 0)) ? alunosJson : false
 
 };
 
-console.log(getStatusAluno('finalizado', 2029))
 
 
 const getStatusDisciplina = (matricula) => {
