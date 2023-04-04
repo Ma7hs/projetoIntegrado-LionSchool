@@ -16,8 +16,11 @@ const getStudentInformartions = (aluno) => {
       return index.nome;
     });
     const disciplineAverage = data.disciplinas.map((index) => {
+      console.log(index.media)
       return index.media;
+
     });
+
 
     let arrayColors = [];
     disciplineAverage.forEach((mediaMateria) => {
@@ -79,5 +82,4 @@ const getStudentInformartions = (aluno) => {
   studentsInfo();
   updateChart();
 };
-
-getStudentInformartions(20151001001);
+getStudentInformartions(20151001024);
