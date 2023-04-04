@@ -209,6 +209,7 @@ const getStatusDisciplina = (matricula) => {
         json = {
           nome: aluno.nome,
           matricula: aluno.matricula,
+          foto: aluno.foto,
           curso: aluno.curso[0].nome,
           disciplinas: disciplinas
         }
