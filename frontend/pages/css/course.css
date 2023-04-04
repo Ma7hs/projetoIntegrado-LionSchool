@@ -10,6 +10,7 @@ body{
 
 main{
     display: flex;
+    /* height: 5vh; */
 }
 
 .status-container {
@@ -84,3 +85,41 @@ select option {
     color: var(--primary-color);
     padding: 3.5rem; */
 
+/* container dos cards dos alunos */
+.container-students{
+    display: flex;
+    padding: 40px;
+    flex-direction: row;
+    gap: 60px;
+}
+
+/* card alunos que finalizaram o curso */
+.students__finished{
+    display: flex;
+    width: 200px;
+    height: 300px;
+    flex-direction: column;
+    background-color: var(--yellow-color);
+}
+
+
+/* card de alunos que estao estudando */
+.students__studying{
+    display: flex;
+    width: 200px;
+    height: 300px;
+    flex-direction: column;
+    background-color: var(--primary-color) ;
+}
+
+
+.students__name{
+    display: flex;
+    color: white;
+}
+
+.students__image{
+    display: flex;
+    width: 200px;
+    height: 200px;
+}
