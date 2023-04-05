@@ -2,7 +2,7 @@
 
 import { fetchStudent } from "./api.js";
 import { fetchData } from "./api.js";
-//import { fetchStatus } from "./api.js";
+import { fetchStatus } from "./api.js";
 
 var id = localStorage.getItem('id_card')
 const courseStudents = await fetchStudent(id);
@@ -10,28 +10,28 @@ const courseStudents = await fetchStudent(id);
 const courseTitle = await fetchData();
 
 
-const createTitle = (curso) => {
-        const courseTitle = document.createElement('h1')
-        courseTitle.classList.add('title')
-        courseTitle.textContent = curso.sigla
+// const createTitle = (curso) => {
+//     const courseTitle = document.createElement('h1')
+//     courseTitle.classList.add('title')
+//     courseTitle.textContent = curso.sigla
     
-        //titleCourse.append(titleCourse)
-        return titleCourse
-     }
+        
+//         return courseTitle
+//     }
    
 const createCardAluno = (aluno, curso) => {
 
-    // const courseTitle = document.createElement('h1')
-    // courseTitle.classList.add('title')
-    // courseTitle.textContent = curso.sigla
-
     // criando card alunos
-    const card = document.createElement('div')
+    const card = document.createElement('a')
+    card.href = "http://127.0.0.1:5500/frontend/pages/student.html"
+    card.target = 'blank_'
+
     if(aluno.status == "Finalizado"){
         card.classList.add('students__finished')
     } else {
         card.classList.add('students__studying')
     }
+    
     const img = document.createElement ( 'img' )
     img.classList.add('students__image')
     img.src = aluno.foto

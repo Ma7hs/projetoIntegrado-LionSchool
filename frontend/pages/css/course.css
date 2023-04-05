@@ -97,7 +97,6 @@ select option {
     /* flex-direction: row; */
     gap: 60px;
     text-align: center;
-    /* text-transform: uppercase; */
     height: 54vh;
     cursor: pointer;
    
