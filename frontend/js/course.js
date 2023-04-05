@@ -2,6 +2,7 @@
 
 import { fetchStudent } from "./api.js";
 import { fetchData } from "./api.js";
+//import { fetchStatus } from "./api.js";
 
 var id = localStorage.getItem('id_card')
 const courseStudents = await fetchStudent(id);
@@ -9,19 +10,20 @@ const courseStudents = await fetchStudent(id);
 const courseTitle = await fetchData();
 
 
-// const createTitle = (curso) => {
-//     const titleCourse = document.createElement('h1')
-//     titleCourse.classList.add('course__title')
-//     titleCourse.textContent = curso.nome
+const createTitle = (curso) => {
+        const courseTitle = document.createElement('h1')
+        courseTitle.classList.add('title')
+        courseTitle.textContent = curso.sigla
+    
+        //titleCourse.append(titleCourse)
+        return titleCourse
+     }
+   
+const createCardAluno = (aluno, curso) => {
 
-//     titleCourse.append(titleCourse)
-//     return titleCourse
-// }
-
-// createTitle()
-// console.log(createTitle)
-
-const createCardAluno = (aluno) => {
+    // const courseTitle = document.createElement('h1')
+    // courseTitle.classList.add('title')
+    // courseTitle.textContent = curso.sigla
 
     // criando card alunos
     const card = document.createElement('div')
@@ -36,16 +38,18 @@ const createCardAluno = (aluno) => {
 
     const name = document.createElement('h3')
     name.classList.add('students__name')
-    name.textContent = aluno.nome
+    name.textContent = aluno.nome.toUpperCase()
     
     card.append(img, name)
     return card
 }
 
-const loadStudents = () => {
+const loadStudents =  () => {
+
     const container = document.getElementById('container-students')
     const alunos = courseStudents.alunos.map(createCardAluno)
-    container.replaceChildren(...alunos)
+    
+    container.append(...alunos)  
 }
 
 loadStudents()

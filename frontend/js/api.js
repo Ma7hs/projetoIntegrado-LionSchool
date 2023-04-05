@@ -13,3 +13,10 @@ export const fetchStudent = async (turma) => {
     const data = await response.json()
     return {...data}
 }
+
+export const fetchStatus = async(status) => {
+    const url = `http://localhost:8080/v1/lion-school/status/alunos/${status}`
+    const response = await fetch(url)
+    const data = await response.json()
+    return {...data}
+}
