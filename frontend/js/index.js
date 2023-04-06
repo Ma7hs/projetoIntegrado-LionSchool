@@ -19,7 +19,7 @@ var i = 0;
 
 export const createCard = (curso) => {
     const card = document.createElement('a')
-    card.href = "http://127.0.0.1:5500/frontend/pages/course.html"
+    card.href = "./pages/course.html"
     card.target = 'blank_'
     card.classList.add('card')
 

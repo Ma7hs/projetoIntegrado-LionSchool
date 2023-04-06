@@ -10,7 +10,11 @@ body{
 
 main{
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
+
 
 .status-container {
     display: flex;
@@ -23,6 +27,7 @@ main{
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     color: var(--primary-color);
+
 }
 
 .status {
@@ -58,6 +63,7 @@ select option {
     display: flex;
     align-items: center;
     gap: .8rem;
+
 }
 
 .block {
@@ -74,13 +80,66 @@ select option {
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.735);
     background-color: var(--yellow-color);
 }
-/* 
-.title-container {
-    /* display: flex;
+
+.title-course {
+    display: flex;
     align-items: center;
-    font-size: 5rem;
+    justify-content: center;
+    font-size: 3rem;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     color: var(--primary-color);
-    padding: 3.5rem; */
+    padding: 2rem; 
+}
 
+
+/* container dos cards dos alunos */
+.container-students{
+    display: flex;
+    /* padding: 15%; */
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    text-align: center;
+    height: 46.6vh; 
+    cursor: pointer;
+   
+
+}
+
+/* card alunos que finalizaram o curso */
+.students__finished{
+    display: flex;
+    width: 200px;
+    height: 300px;
+    flex-direction: column;
+    background-color: var(--yellow-color);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.749);
+}
+
+
+/* card de alunos que estao estudando */
+.students__studying{
+    display: flex;
+    width: 200px;
+    height: 300px;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.749);
+}
+
+
+.students__name{
+    display: flex;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    padding: 20px; 
+}
+
+.students__image{
+    display: flex;
+    width: 200px;
+    height: 200px;
+}

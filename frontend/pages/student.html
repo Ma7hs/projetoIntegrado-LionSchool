@@ -18,6 +18,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/2bbeedebb6.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer type="module"></script>
+    <script src="../js/chart.js" defer type="module"></script>
     <title>Lion School</title>
 </head>
 <body>
@@ -39,7 +41,14 @@
         </header>
 
         <main>
-            <h1> .. </h1>
+            <div class="informations" id="informations">
+                <div class="student-profile" id="student-profile">
+    
+                </div>
+                <div class="chart-area" id="chart-area">
+                    <canvas id="myChart" style="width: 500px; height: 400px; display: flex;"></canvas>
+                </div>
+            </div>
         </main>
 
         <footer>
