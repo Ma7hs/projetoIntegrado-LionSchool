@@ -20,3 +20,5 @@ export const fetchStatus = async(status) => {
     const data = await response.json()
     return {...data}
 }
+
+

@@ -7,12 +7,13 @@ main{
     margin-top: 100px;
     align-items: center;
     justify-content: center;
+    height: 57.3vh;
 }
 
 .chart-area{
     width: 500px; 
     height: 400px;
-     display: flex;
+    display: flex;
 }
 
 .informations {
