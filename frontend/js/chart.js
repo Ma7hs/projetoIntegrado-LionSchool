@@ -5,9 +5,9 @@ const getStudentInformartions = (matriculaALuno) => {
 
   const fetchData = async () => {
     const url = `http://localhost:8080/v1/lion-school/status/disciplinas/${matriculaALuno}`;
-    const response = await fetch(url);
+    const response = await fetch (url);
     const data = await response.json();
-    return data;
+    return {...data}
   };
 
   const ctx = document.getElementById("myChart");
@@ -64,6 +64,7 @@ const getStudentInformartions = (matriculaALuno) => {
     myChart.update();
   }
 
+
   const studentsInfo = async () => {
     const data = await fetchData();
     const container = document.getElementById("informations");
@@ -72,17 +73,19 @@ const getStudentInformartions = (matriculaALuno) => {
     studentProfile.classList.add("student-profile");
 
     const studentName = document.createElement('p')
+    studentName.classList.add('student-name')
     studentName.textContent = data.nome
 
     const studentImage = document.createElement('img')
     studentImage.classList.add('student-image')
     studentImage.src = data.foto
 
-    studentProfile.append(studentName, studentImage)
+    studentProfile.append(studentImage, studentName)
     container.replaceChildren(studentProfile, ctx);
   };
 
   studentsInfo();
   updateChart();
 };
+
 getStudentInformartions(matriculaALuno);

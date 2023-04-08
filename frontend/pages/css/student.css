@@ -21,8 +21,9 @@ main{
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    gap: 40px;
+    gap: 250px;
     height: 400px;
+    margin-bottom: 4.5%;
 }
 
 .student-profile {
@@ -41,6 +42,14 @@ main{
 
 .student-image{
     display: flex;
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 350px;
+}
+
+.student-name{
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--primary-color);
 }

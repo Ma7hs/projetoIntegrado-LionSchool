@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    width: 30%;
 }
 .blue-text{
     color: #3347B0;
@@ -34,5 +35,14 @@
 
 .image-studant{
     display: flex;
+    margin-right: 5%;
+}
+
+@media (max-width:960px){
+
+
+    .image-studant{
+        display: none;
+    }
 }
 

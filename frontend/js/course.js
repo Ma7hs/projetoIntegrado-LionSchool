@@ -2,7 +2,7 @@
 
 import { fetchStudent } from "./api.js";
 import { fetchData } from "./api.js";
-import { fetchStatus } from "./api.js";
+// import { fetchStatus } from "./api.js";
 
 var id = localStorage.getItem('id_card')
 console.log(id);

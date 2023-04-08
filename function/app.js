@@ -86,6 +86,7 @@ const getAlunosCurso = (curso, status) => {
       if (cursoAluno == curso) {
         let infoAluno = {
           nome: aluno.nome,
+          matricula: aluno.matricula,
           foto: aluno.foto,
           status: aluno.status
         }
@@ -107,6 +108,7 @@ const getAlunosCurso = (curso, status) => {
       if (cursoAluno == curso) {
         let infoAluno = {
           nome: aluno.nome,
+          matricula: aluno.matricula,
           foto: aluno.foto,
           status: aluno.status
         }
