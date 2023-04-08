@@ -19,3 +19,25 @@
     font-family: 'Roboto', sans-serif;
     line-height: 42.19px;
 }
+
+@media (max-width:960px){
+
+    .logout{
+        gap: 10px;
+    }
+    .logout__image{
+        width: 42px;
+        height: 38.67px;
+        margin-top: 10px;
+    }
+    .logout__name{
+        font-size: 28px;
+        margin-top: 12px;
+    }
+}
+
+@media (max-width: 640px){
+    .logout__name{
+     display: none;
+    }
+}
