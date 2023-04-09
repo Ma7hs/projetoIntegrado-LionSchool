@@ -75,11 +75,13 @@ const getStudentInformartions = (matriculaALuno) => {
       return palavra.charAt(0).toUpperCase() + palavra.slice(1).toLowerCase();
     }).join(" ");
 
-
     const studentProfile = document.getElementById("student-profile");
     studentProfile.classList.add("student-profile");
 
     const studentName = document.createElement('p')
+    if(palavras.length >= 4){
+      studentName.style.fontSize = '22px'
+    }
     studentName.textContent = nomeFormatado
 
     const studentImage = document.createElement('img')
