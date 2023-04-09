@@ -46,16 +46,16 @@
 @media (max-width: 640px){
 
     .status-container {
-        padding: 1.3rem 4rem;
-        font-size: 1.2rem;
+        padding: 1rem 4rem;
+        font-size: 1rem;
     }
     .subtitle {
-        gap: 2rem;
+        gap: 1.2rem;
     }
-    select {
-        font-size: 1.4rem;
+    .block {
+        width: 15px;
+        height: 15px;
     }
-    
     .title-course {
         font-size: 2.3rem;
         text-align: center;
@@ -66,12 +66,12 @@
         height: 325vh; 
     }
     .students__finished{
-        width: 300px;
-        height: 400px;
+        width: 310px;
+        height: 425px;
     }
     
     .students__studying{
-        width: 300px;
+        width: 310px;
         height: 425px;
     }
     .students__name{
@@ -80,8 +80,8 @@
     }
     
     .students__image{
-        width: 280px;
-        height: 280px;
+        width: 310px;
+        height: 310px;
     }
 
 }
