@@ -31,7 +31,7 @@ O projeto é o gerenciamento da escola Lion School, deverá ser realizado tanto 
 - [x]  Os botões dos cursos são dinâmicos?
 - [x] Os cards são criados dinamicamente?
 - [x] A página com informações dos cursos foi criada dinamicamente?
-- [ ] O filtro por status está funcional?
+- [x] O filtro por status está funcional?
 - [x] Os nomes das variáveis, funções e arquivos tem valor semântico?
 - [x] A maioria das funções seguem as boas práticas como responsabilidade única?
 - [x] Foi criado variáveis pensando nas boas praticas?
