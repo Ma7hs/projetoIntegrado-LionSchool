@@ -1,0 +1,46 @@
+body{
+    height: 100vh;
+    display: grid;
+    grid-template-areas: "content";
+}
+
+main{
+    display: flex;
+    height: 68.5%;
+    align-items: center;
+    justify-content: center;
+    grid-template-areas: "content";
+}
+
+@media (max-width:960px){
+
+    body{
+        display: flex;
+        height: 100vh;
+    }
+    main{
+        display: grid;
+        grid-template-areas: 
+        "content"
+        "cards" ;
+        grid-template-columns: 1fr 1fr;
+        height: 69.3vh;
+        padding: 5%;
+    }
+}
+
+@media (max-width: 640px){
+    
+    body{
+        display: flex;
+        height: 100vh;
+    }
+    main{
+        display: grid;
+        grid-template-areas: 
+        "content"
+        "cards" ;
+        grid-template-rows: 1fr 1fr;
+        height: 125vh;
+    }
+}

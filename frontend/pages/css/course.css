@@ -35,7 +35,30 @@ main{
     height: 60%;
     align-items: center;
     justify-content: center;
+<<<<<<< HEAD
     grid-area: 'main';
+=======
+}
+
+
+.status-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--secondary-color);
+    height: fit-content;
+    padding: 1.5rem 9.5rem;
+    font-size: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+>>>>>>> 993d9fa2c5ba7f6d12bcf5d546006ca4bfcaf667
 }
 
 select {
@@ -97,14 +120,12 @@ footer p a:hover {
 .subtitle-container {
     display: flex;
     align-items: center;
-    gap: .8rem;
-
+    gap: 0.8rem;
 }
 
 .block {
     width: 20px;
     height: 20px;
-
 }
 .blue-block {
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.580);
@@ -127,7 +148,10 @@ footer p a:hover {
     padding: 2rem; 
 }
 
+<<<<<<< HEAD
 /* container dos cards dos alunos */
+=======
+>>>>>>> 993d9fa2c5ba7f6d12bcf5d546006ca4bfcaf667
 .container-students{
     display: flex;
     align-items: center;
@@ -136,12 +160,14 @@ footer p a:hover {
     text-align: center;
     height: 100%; 
     cursor: pointer;
+<<<<<<< HEAD
    flex-wrap: wrap;
    margin-bottom: 20px;
 
+=======
+>>>>>>> 993d9fa2c5ba7f6d12bcf5d546006ca4bfcaf667
 }
 
-/* card alunos que finalizaram o curso */
 .students__finished{
     display: flex;
     width: 200px;
@@ -151,8 +177,6 @@ footer p a:hover {
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.749);
 }
 
-
-/* card de alunos que estao estudando */
 .students__studying{
     display: flex;
     width: 200px;
@@ -161,8 +185,6 @@ footer p a:hover {
     background-color: var(--primary-color);
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.749);
 }
-
-
 .students__name{
     display: flex;
     color: white;
@@ -171,9 +193,9 @@ footer p a:hover {
     font-family: 'Poppins', sans-serif;
     padding: 20px; 
 }
-
 .students__image{
     display: flex;
     width: 200px;
     height: 200px;
 }
+

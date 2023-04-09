@@ -1,19 +1,25 @@
 'use strict'
 
-import {
-    fetchStudent
-} from "./api.js";
-import {
-    fetchData
-} from "./api.js";
+import { fetchStudent } from "./api.js";
+import { fetchData } from "./api.js";
+
+var id = localStorage.getItem('id_card')
+console.log(id);
+const courseStudents = await fetchStudent(id);
+console.log(courseStudents);
 
 
 const id = localStorage.getItem('id_card')
 const courseTitle = await fetchData();
+<<<<<<< HEAD
 const selectedValue = localStorage.getItem('selected')
 console.log(selectedValue);
 const courseStudents = await fetchStudent(id, selectedValue)
 const select = document.getElementById('select');
+=======
+const ds = courseTitle.cursos[0].nome.replace("-", "").replace("001", "")
+const rds = courseTitle.cursos[1].nome.replace("-", "").replace("002", "")
+>>>>>>> 993d9fa2c5ba7f6d12bcf5d546006ca4bfcaf667
 
 select.addEventListener('change', () => {
     const valorSelecionado = select.value;

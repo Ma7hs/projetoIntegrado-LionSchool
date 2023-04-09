@@ -25,10 +25,6 @@
     font-size: 1rem;
 }
 
-.copy {
-    font-size: 2rem;
-}
-
 .social {
     display: flex;
     gap: 2rem;
@@ -52,4 +48,75 @@
     background-color: black;
     border-color: white;
     
+}
+
+
+@media (max-width:960px){
+
+    .contact {
+        gap: 0.5rem;
+        margin-bottom: 20px;
+    }
+    .social {
+        display: flex;
+        gap: 0.8rem;
+        margin-bottom: 12px;
+    }
+    .social-icon {
+        height: 18px;
+        width: 18px;
+        padding: 1.3rem;
+        font-size: 1.3rem;
+    }
+    .contact-info {
+        gap: 0.7rem;
+    }
+    .text-contact {
+        font-size: 0.85rem;
+    }
+    .fa-solid {
+        font-size: 1.2rem;
+    }
+    .copyrigth{
+        font-size: 14px;
+        margin-top: 15%;
+    }
+}
+
+@media (max-width: 640px){
+    
+    .contact {
+        grid-area: contact;
+        gap: 0.5rem;
+        align-items: center;
+        margin-top: 8%;
+        margin-bottom: 60px;
+    }
+    .social-container{
+        grid-area: social;
+        height: 85%;
+    }
+    .social {
+        gap: 0.8rem;
+        flex-direction: column;
+    }
+    .social-icon {
+        margin-left: 43%;
+        padding: 2rem;
+        font-size: 2rem;
+    }
+    .contact-info {
+        gap: 1rem;
+    }
+    .text-contact {
+        font-size: 1.2rem;
+    }
+    .fa-solid {
+        font-size: 1.75rem;
+    }
+    .copyrigth{
+        grid-area: copyright;
+        font-size: 18px;
+        margin-left: 35px;
+    }
 }
