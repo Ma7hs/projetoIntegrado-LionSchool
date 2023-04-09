@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    width: 30%;
 }
 .blue-text{
     color: #3347B0;
@@ -29,10 +30,58 @@
 .description__image{
     display: flex;
     width: 436px;
-    height: 262px;
+    height: 292px;
 }
-
 .image-studant{
     display: flex;
+    margin-right: 5%;
+}
+
+@media (max-width:960px){
+
+    .description-home{
+        gap: 34px; 
+        display: flex;
+        width: 10%;
+        margin-top: 10%;
+    }
+    .image-studant{
+        display: none;
+    }
+    .text{
+        width: 300px; 
+        font-size: 36px;
+    }
+    .blue-text{
+        font-size: 36px;
+    }
+    .description__image{
+        width: 322px;
+        height: 240px;
+    }
+}
+
+@media (max-width: 640px){
+    .description-home{
+        gap: 24px; 
+        grid-area: content;
+        width: 5%;
+        margin-left: 20%;
+    }
+    .image-studant{
+        display: none;
+    }
+    .text{
+        width: 400px; 
+        font-size: 36px;
+        text-align: center;
+    }
+    .blue-text{
+        font-size: 36px;
+    }
+    .description__image{
+        width: 322px;
+        height: 240px;
+    }
 }
 

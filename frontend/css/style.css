@@ -20,7 +20,7 @@ footer{
     font-family: 'Roboto', sans-serif;
     padding-left: 8.5rem;
     padding-right: 8.5rem;
-    height: 12.5rem;
+    height: 11rem;
     color: white;
     display: flex;
     align-items: center;
@@ -30,4 +30,34 @@ footer{
 
 footer p a:hover {
     font-style: oblique;
+}
+
+@media (max-width:960px){
+
+    header{
+        height: 90px;
+
+    }
+    footer{
+        height: 10rem;
+        padding-left: 3.86rem;
+        padding-right: 3.86rem;
+    }
+}
+
+@media (max-width: 640px){
+    
+    header{
+        height: 80px;
+    }
+    footer{
+        height: 42rem;
+        display: grid;
+        grid-template-areas: 
+        "contact"
+        "social"
+        "copyright"; 
+        grid-template-columns: 1fr; 
+        grid-template-rows: 1fr 2fr 1fr;
+    }
 }
