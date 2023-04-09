@@ -4,12 +4,7 @@ import { fetchStudent } from "./api.js";
 import { fetchData } from "./api.js";
 
 var id = localStorage.getItem('id_card')
-console.log(id);
-const courseStudents = await fetchStudent(id);
-console.log(courseStudents);
 
-
-const id = localStorage.getItem('id_card')
 const courseStudents = await fetchStudent(id);
 const courseTitle = await fetchData();
 const ds = courseTitle.cursos[0].nome.replace("-", "").replace("001", "")
