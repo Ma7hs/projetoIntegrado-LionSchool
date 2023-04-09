@@ -53,3 +53,10 @@ main{
     font-size: 18px;
     color: var(--primary-color);
 }
+@media (max-width:960px){
+
+}
+
+@media (max-width: 640px){
+    
+}

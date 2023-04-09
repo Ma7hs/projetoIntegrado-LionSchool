@@ -11,9 +11,9 @@ console.log(courseStudents);
 
 
 const courseTitle = await fetchData();
+const ds = courseTitle.cursos[0].nome.replace("-", "").replace("001", "")
+const rds = courseTitle.cursos[1].nome.replace("-", "").replace("002", "")
 
-const ds = courseTitle.cursos[0].nome
-const rds = courseTitle.cursos[1].nome
 
 const createTitle = () => {
     const createTitleCourse = document.createElement('h1')
