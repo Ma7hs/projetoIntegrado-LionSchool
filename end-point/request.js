@@ -65,27 +65,35 @@ app.get(`/v1/lion-school/alunos/:matricula`, cors(), async function (request, re
     response.json(info_aluno)
 })
 
-app.get(`/v1/lion-school/:curso/alunos`, cors(), async function (request, response, next) {
+app.get(`/v1/lion-school/:curso/alunos/:status`, cors(), async function (request, response, next) {
     let curso = request.params.curso.toUpperCase()
-    let aluno = lionSchool.getAlunosCurso(curso)
+    let status = request.params.status.charAt(0).toUpperCase() + request.params.status.slice(1)
+    let alunos 
+
+    if(status == 'Todos'){
+        alunos = lionSchool.getAlunosCurso(curso)
+    }else if(status != undefined){
+        alunos = lionSchool.getAlunosCurso(curso, status)
+    }
+
     let info_curso = {}
     let statusCode
     if(curso == '' || curso == undefined || !isNaN(curso)){
         statusCode = 400
         info_curso.message = ('Nao foi possivel realizar a requisicao pois deve haver algum erro no momento de informar o curso')
     }else{
-        if (aluno) {
-            info_curso = aluno;
+        if (alunos) {
+            info_curso = alunos;
             statusCode = 200
         } else {
             statusCode = 400
-        }
+        }   
     }
     response.status(statusCode)
     response.json(info_curso)   
 })
 
-app.get(`/v1/lion-school/status/alunos/:status`, cors(), async function (request, response, next) {
+app.get(`/v1/lion-school/status/alunos/`, cors(), async function (request, response, next) {
     let status = request.params.status  
     let status_aluno = lionSchool.getStatusAluno(status)
     let info_status = {}

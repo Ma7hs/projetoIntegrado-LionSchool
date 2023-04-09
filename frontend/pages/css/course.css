@@ -4,36 +4,38 @@
     --yellow-color: #E5B657;
 }
 
-body{
-    height: 100vh;
+
+html, body{
+    display: grid;
+    grid-template-areas:'header',
+                        'main'
+                        'footer';
+    height: 100%;
+    width: 100%;
+}
+
+.course-container{
+    height: 100%;
+    width: 100%;
+}
+
+
+header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-color: var(--primary-color);
+    height: 15%;
+    grid-area: 'header';
 }
 
 main{
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    height: 60%;
     align-items: center;
     justify-content: center;
-}
-
-
-.status-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--secondary-color);
-    height: fit-content;
-    padding: 1.5rem 9.5rem;
-    font-size: 1.6rem;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    color: var(--primary-color);
-
-}
-
-.status {
-    display: flex;
-    align-items: center;
-    font-family: 'Roboto', sans-serif;
+    grid-area: 'main';
 }
 
 select {
@@ -50,8 +52,41 @@ select option {
     display: flex;
     color: white;
     font-size: 1.5rem;
-    font-family: 'Roboto', sans-serif;
     background-color: var(--primary-color);
+}
+
+footer{
+    display: flex; 
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background-color: var(--primary-color);
+    height: 15%;
+    color: white;
+    font-size: 1rem;
+    grid-area: 'footer';
+}
+
+footer p a:hover {
+    font-style: oblique;
+}
+
+.status-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--secondary-color);
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    height: 80px;
+
+}
+
+.status {
+    display: flex;
+    align-items: center;
 }
 
 .subtitle {
@@ -85,25 +120,24 @@ select option {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     font-size: 3rem;
-    font-family: 'Roboto', sans-serif;
     font-weight: 500;
     color: var(--primary-color);
     padding: 2rem; 
 }
 
-
 /* container dos cards dos alunos */
 .container-students{
     display: flex;
-    /* padding: 15%; */
     align-items: center;
     justify-content: center;
     gap: 60px;
     text-align: center;
-    height: 46.6vh; 
+    height: 100%; 
     cursor: pointer;
-   
+   flex-wrap: wrap;
+   margin-bottom: 20px;
 
 }
 

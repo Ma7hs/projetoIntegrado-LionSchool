@@ -82,14 +82,14 @@ const getAlunosCurso = (curso, status) => {
   alunos.alunos.forEach((aluno) => {
     const cursoAluno = aluno.curso[0].sigla;
     const statusAluno = aluno.status;
-    if (curso != undefined && status != undefined) {
-      if (cursoAluno == curso) {
-        let infoAluno = {
+    let infoAluno = {
           nome: aluno.nome,
           matricula: aluno.matricula,
           foto: aluno.foto,
           status: aluno.status
         }
+    if (curso != undefined && status != undefined) {
+      if (cursoAluno == curso) {
         if (cursoAluno == "RDS" && statusAluno == status) {
           alunosRDS.push(infoAluno);
           alunosJson = {
@@ -106,17 +106,11 @@ const getAlunosCurso = (curso, status) => {
       funStatus = true;
     } else if (curso != undefined && status == undefined) {
       if (cursoAluno == curso) {
-        let infoAluno = {
-          nome: aluno.nome,
-          matricula: aluno.matricula, 
-          foto: aluno.foto,
-          status: aluno.status
-        }
         if (cursoAluno == "RDS") {
           alunosRDS.push(infoAluno);
           alunosJson = {
             alunos: alunosRDS,
-          };
+          }
         } else if (cursoAluno == "DS") {
           alunosDS.push(infoAluno);
           alunosJson = {
@@ -134,7 +128,6 @@ const getAlunosCurso = (curso, status) => {
     return funStatus;
   }
 }
-
 
 const getStatusAluno = (status, ano) => {
   let alunosCursando = [];
