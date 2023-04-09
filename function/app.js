@@ -104,6 +104,7 @@ const getAlunosCurso = (curso, status) => {
         }
       }
       funStatus = true;
+      
     } else if (curso != undefined && status == undefined) {
       if (cursoAluno == curso) {
         if (cursoAluno == "RDS") {

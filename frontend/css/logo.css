@@ -8,12 +8,9 @@
 .logo__image {
     display: flex;
     margin-top: 14px;
-<<<<<<< HEAD
     margin-left: 96px;
-=======
     margin-left: 96px; 
     margin-bottom: 15px;
->>>>>>> 993d9fa2c5ba7f6d12bcf5d546006ca4bfcaf667
 }
 
 .logo__title {
@@ -21,15 +18,9 @@
     color: white;
     line-height: 28.13px;
     font-weight: 700;
-<<<<<<< HEAD
     font-size: 32px;
     font-weight: bold;
     width: 120px;
-}
-=======
-    font-size: 24px;
-    width: 50px;
-    font-family: 'Roboto', sans-serif;
 }
 
 @media (max-width:960px){
@@ -58,4 +49,3 @@
        
     }
 }
->>>>>>> 993d9fa2c5ba7f6d12bcf5d546006ca4bfcaf667

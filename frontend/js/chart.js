@@ -80,19 +80,13 @@ const getStudentInformartions = (matriculaALuno) => {
     studentProfile.classList.add("student-profile");
 
     const studentName = document.createElement('p')
-<<<<<<< HEAD
     studentName.textContent = nomeFormatado
-
-=======
-    studentName.classList.add('student-name')
-    studentName.textContent = data.nome
->>>>>>> 993d9fa2c5ba7f6d12bcf5d546006ca4bfcaf667
 
     const studentImage = document.createElement('img')
     studentImage.classList.add('student-image')
     studentImage.src = data.foto
 
-    studentProfile.append(studentImage, studentName)
+    studentProfile.append(studentName, studentImage) 
     container.replaceChildren(studentProfile, ctx);
   };
 
