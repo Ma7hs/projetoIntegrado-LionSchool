@@ -2,7 +2,6 @@
 
 import { fetchStudent } from "./api.js";
 import { fetchData } from "./api.js";
-// import { fetchStatus } from "./api.js";
 
 var id = localStorage.getItem('id_card')
 console.log(id);
@@ -10,24 +9,27 @@ const courseStudents = await fetchStudent(id);
 console.log(courseStudents);
 
 
+const id = localStorage.getItem('id_card')
+const courseStudents = await fetchStudent(id);
 const courseTitle = await fetchData();
 const ds = courseTitle.cursos[0].nome.replace("-", "").replace("001", "")
 const rds = courseTitle.cursos[1].nome.replace("-", "").replace("002", "")
 
 
 const createTitle = () => {
+    const ds = courseTitle.cursos[0].nome
+    const rds = courseTitle.cursos[1].nome
     const createTitleCourse = document.createElement('h1')
     createTitleCourse.classList.add('title-course')
-    if(id == 'DS'){
+    if (id == 'DS') {
         createTitleCourse.textContent = ds
         console.log(createTitleCourse);
-    }else if(id == 'RDS'){
+    } else if (id == 'RDS') {
         createTitleCourse.textContent = rds
         console.log(createTitleCourse);
     }
     return createTitleCourse
 }
-
 
 const createCardAluno = (aluno) => {
     const cardAluno = document.createElement('a')
@@ -36,8 +38,10 @@ const createCardAluno = (aluno) => {
 
     if (aluno.status == "Finalizado") {
         cardAluno.classList.add('students__finished')
+        cardAluno.setAttribute('data-status', 'finalizado');
     } else {
         cardAluno.classList.add('students__studying')
+        cardAluno.setAttribute('data-status', 'cursando');
     }
 
     const img = document.createElement('img')
@@ -54,8 +58,30 @@ const createCardAluno = (aluno) => {
         var storage = localStorage.setItem('id_cardAluno', cardAluno.id)
         console.log(storage);
     }
+
+    const filtro = () => {
+       const teste =  document.getElementById('select').addEventListener('change', function(){
+            const stausSelecionado = this.value
+            console.log(stausSelecionado);
+            
+            if(stausSelecionado == 'cursando'){
+                const agora = cardAluno.getAttribute == 'finalizado'
+                console.log(agora);
+                if(agora == 'finalizado'){
+                    cardAluno.style.display = 'none'
+                }
+            }
+            
+            }
+        )
+    }
+
+    filtro()
+
     return cardAluno
 }
+
+
 
 const loadStudents = () => {
     const box = document.getElementById('box')
@@ -63,8 +89,7 @@ const loadStudents = () => {
     const alunos = courseStudents.alunos.map(createCardAluno)
     container.append(...alunos)
     box.replaceChildren(createTitle(), container)
-   
-}   
+
+}
 
 loadStudents()
-

@@ -27,7 +27,7 @@ export const createCard = (curso) => {
     card.onclick = () => {
         fetchStudent(card.id)
         var storage = localStorage.setItem('id_card', card.id)
-    }
+    }   
 
     return card
 
