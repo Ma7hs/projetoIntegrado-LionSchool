@@ -7,7 +7,7 @@ export const fetchData = async () => {
     return {...data}
 }
 
-export const fetchStudent = async (turma, status = 'Todos') => {
+export const fetchStudent = async (turma, status) => {
     const url = `http://localhost:8080/v1/lion-school/${turma}/alunos/${status}`
     const response = await fetch(url)
     const data = await response.json()

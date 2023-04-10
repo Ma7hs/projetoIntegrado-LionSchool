@@ -7,7 +7,13 @@ const courseTitle = await fetchData();
 
 const id = localStorage.getItem('id_card')
 const selectedValue = localStorage.getItem('selected')
-const courseStudents = await fetchStudent(id, selectedValue)
+
+let courseStudents
+if (selectedValue == undefined) {
+    courseStudents = await fetchStudent(id, 'todos');
+} else {
+    courseStudents = await fetchStudent(id, selectedValue);
+}
 
 const select = document.getElementById('select');
 select.addEventListener('change', () => {
@@ -34,7 +40,10 @@ const createTitle = () => {
 
 const createCardAluno = (aluno) => {
     const cardAluno = document.createElement('a')
-    cardAluno.href = "http://127.0.0.1:50152/frontend/pages/student.html"
+    const host = window.location.protocol + '//' + window.location.host;
+    console.log(host);
+    const studentPath = '/frontend/pages/student.html';
+    cardAluno.href = host + studentPath;
     cardAluno.target = 'blank_'
 
     if (aluno.status == "Finalizado") {
