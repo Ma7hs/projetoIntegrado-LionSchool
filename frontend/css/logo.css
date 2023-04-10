@@ -1,24 +1,26 @@
-
-.logo{
+.logo {
     display: flex;
     align-items: center;
     gap: 10px;
     width: 90%;
 }
-.logo__image{
+
+.logo__image {
     display: flex;
     margin-top: 14px;
+    margin-left: 96px;
     margin-left: 96px; 
     margin-bottom: 15px;
 }
-.logo__title{
+
+.logo__title {
     display: flex;
     color: white;
     line-height: 28.13px;
     font-weight: 700;
-    font-size: 24px;
-    width: 50px;
-    font-family: 'Roboto', sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    width: 120px;
 }
 
 @media (max-width:960px){

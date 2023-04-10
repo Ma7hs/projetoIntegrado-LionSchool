@@ -1,9 +1,13 @@
+.general-container{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
 
 .container{
     display: flex;
     flex-direction: column;
-    padding: 16px;
-    gap: 60px;
 }
 .card{
     display: flex;

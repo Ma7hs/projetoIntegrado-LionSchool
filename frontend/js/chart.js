@@ -1,5 +1,5 @@
 
-var matriculaALuno = localStorage.getItem('id_cardAluno')
+const matriculaALuno = localStorage.getItem('id_cardAluno')
 
 const getStudentInformartions = (matriculaALuno) => {
 
@@ -68,19 +68,27 @@ const getStudentInformartions = (matriculaALuno) => {
   const studentsInfo = async () => {
     const data = await fetchData();
     const container = document.getElementById("informations");
+  
+    const nomeCompleto = data.nome;
+    const palavras = nomeCompleto.split(" ");
+    const nomeFormatado = palavras.map(palavra => {
+      return palavra.charAt(0).toUpperCase() + palavra.slice(1).toLowerCase();
+    }).join(" ");
 
     const studentProfile = document.getElementById("student-profile");
     studentProfile.classList.add("student-profile");
 
     const studentName = document.createElement('p')
-    studentName.classList.add('student-name')
-    studentName.textContent = data.nome
+    if(palavras.length >= 4){
+      studentName.style.fontSize = '22px'
+    }
+    studentName.textContent = nomeFormatado
 
     const studentImage = document.createElement('img')
     studentImage.classList.add('student-image')
     studentImage.src = data.foto
 
-    studentProfile.append(studentImage, studentName)
+    studentProfile.append(studentName, studentImage) 
     container.replaceChildren(studentProfile, ctx);
   };
 

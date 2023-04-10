@@ -1,13 +1,46 @@
-body{
-    height: 100vh;
+:root{
+    --primary-color:  #3347B0;
+}
+
+html, body{
+    display: flex;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+
+header{
+    display: flex;
+    flex-direction: row;
+    background-color: var(--primary-color);
+    height: 15%
 }
 
 main{
     display: flex;
-    margin-top: 100px;
+    height: 70%;
     align-items: center;
     justify-content: center;
-    height: 57.3vh;
+}
+
+.student-container{
+    height: 100%;
+    width: 100%;
+}
+
+footer{
+    display: flex; 
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--primary-color);
+    height: 15%;
+    color: white;
+    font-size: 1rem;
+}
+
+footer p a:hover {
+    font-style: oblique;
 }
 
 .chart-area{
@@ -21,9 +54,8 @@ main{
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    gap: 250px;
+    gap: 150px;
     height: 400px;
-    margin-bottom: 4.5%;
 }
 
 .student-profile {
