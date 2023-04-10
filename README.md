@@ -1,6 +1,6 @@
 |      TABLET         |          DESKTOP       |
 |:-------------------:|:-----------------------:
-|![](./frontend/img/tablet.png)|![]()|
+|![](./frontend/img/tablet.png)|![](./frontend/img/desktop.png)|
 |                     |                        
 
 ### [Clique aqui]() para acessar o site!

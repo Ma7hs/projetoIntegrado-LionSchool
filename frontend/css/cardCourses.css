@@ -38,9 +38,17 @@
 
 @media (max-width:960px){
 
+    .general-container{
+        display: grid;
+        grid-template-areas: 
+        "content"
+        "cards" ;
+        grid-template-columns: 1fr 1fr;
+    }
     .container{
         gap: 40px;
         margin-top: 12%;
+        margin-left: 25%;
     }
     .card{
         width: 330px;
@@ -58,10 +66,13 @@
 @media (max-width: 640px){
 
     .container{
-        gap: 40px;
+        display: grid;
         grid-area: cards;
-        margin-left: 25%;
+        gap: 40px;
+        align-items: center;
+     
     }
+
     .card{
         width: 330px;
         height: 160px;

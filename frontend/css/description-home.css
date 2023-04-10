@@ -43,6 +43,8 @@
 @media (max-width:960px){
 
     .description-home{
+        display: grid;
+        grid-area: content;
         gap: 34px; 
         display: flex;
         width: 10%;

@@ -1,0 +1,22 @@
+@media (max-width: 960px){
+
+}
+
+
+
+
+@media (max-width: 640px){
+    header{
+        height: 120px;
+    }   
+
+    
+    footer{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        height: 90vh;
+        
+    }
+
+}
