@@ -3,7 +3,7 @@
 |![](./frontend/img/mobile.png)|![](./frontend/img/desktop.png)|
 |                     |                        
 
-### [Clique aqui]() para acessar o site!
+### [Clique aqui](https://ma7hs.github.io/projetoIntegrado-LionSchool/frontend/index.html) para acessar o site!
 
 ## Objetivo
 
