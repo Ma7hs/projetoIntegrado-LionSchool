@@ -4,7 +4,6 @@ import { fetchStudent } from "./api.js";
 import { fetchData } from "./api.js";
 
 const courseTitle = await fetchData();
-
 const id = localStorage.getItem('id_card')
 const selectedValue = localStorage.getItem('selected')
 const courseStudents = await fetchStudent(id, selectedValue)
