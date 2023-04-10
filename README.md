@@ -1,6 +1,6 @@
-|      TABLET         |          DESKTOP       |
+|      MOBILE         |          DESKTOP       |
 |:-------------------:|:-----------------------:
-|![](./frontend/img/tablet.png)|![]()|
+|![](./frontend/img/mobile.png)|![](./frontend/img/desktop.png)|
 |                     |                        
 
 ### [Clique aqui]() para acessar o site!
