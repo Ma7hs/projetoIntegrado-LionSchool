@@ -40,7 +40,6 @@ const createTitle = () => {
 const createCardAluno = (aluno) => {
     const cardAluno = document.createElement('a')
     const host = window.location.protocol + '//' + window.location.host;
-    console.log(host);
     const studentPath = '/frontend/pages/student.html';
     cardAluno.href = host + studentPath;
     cardAluno.target = 'blank_'
