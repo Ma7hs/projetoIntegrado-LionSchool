@@ -1,4 +1,3 @@
-
 |      TABLET         |          DESKTOP       |
 |:-------------------:|:-----------------------:
 |![](./frontend/img/tablet.png)|![]()|
@@ -6,14 +5,12 @@
 
 ### [Clique aqui]() para acessar o site!
 
----
 ## Objetivo
 
 A atividade tem como objetivo integrar as disciplinas de PWFE (Programação web Front-end) e PWBE (Programação web Back-end) do curso de desenvolvimento de sistemas do [SENAI Jandira](https://jandira.sp.senai.br/) .
 
 O projeto é o gerenciamento da escola Lion School, deverá ser realizado tanto o back-end como o front-end.
 
----
 
 ## Tecnologias utilizadas
 - CSS
@@ -24,8 +21,6 @@ O projeto é o gerenciamento da escola Lion School, deverá ser realizado tanto 
 - JavaScript
 - Responsividade
 
-
----
 ## Critérios de Avaliação
 - [x] Criou layout conforme designer feito no Figma?
 - [x]  Os botões dos cursos são dinâmicos?
@@ -39,14 +34,7 @@ O projeto é o gerenciamento da escola Lion School, deverá ser realizado tanto 
 - [x] Foi implementado a responsividade conforme planejado no Figma?
 - [x] Foi criado o filtro por ano?
 
----
 
 ## Autores
 - [Letícia Evelin](https://github.com/leticia-evelin)
 - [Matheus Siqueira](https://github.com/Ma7hs)
-
-
-
-
-
-

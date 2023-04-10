@@ -1,0 +1,81 @@
+@media (max-width:960px){
+
+    body{
+        height: 90vh;
+    }
+
+    main{
+        height: 59.4vh;
+    }
+
+    .chart-area{
+        width: 400px; 
+        height: 300px;
+    }
+    
+    .informations {
+        gap: 20px;
+        height: 400px;
+        margin-bottom: 4.5%;
+    }
+    
+    
+    .student-profile {
+        width: 350px;
+        height: 350px;
+    }
+    .student-image{
+        width: 300px;
+        height: 300px;
+    }
+    
+    .student-name{
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 640px){
+    
+
+    main{
+        display: grid;
+        grid-template-areas: 
+        "informations"
+        "chart";
+        grid-template-rows: 1fr; 
+        grid-template-rows: 1fr 1fr;
+        height: 100vh;
+    }
+
+    .chart-area{
+        display: grid;
+        grid-area: chart;
+        width: 400px; 
+        height: 500px;
+    }
+    
+    .informations {
+        display: grid;
+        grid-area: informations;
+        gap: 20px;
+        height: 400px;
+        align-items: center;
+        justify-content: center;
+        /* padding-left: 2%; */
+    }
+    
+    
+    .student-profile {
+        width: 350px;
+        height: 350px;
+    }
+    .student-image{
+        width: 300px;
+        height: 300px;
+    }
+    
+    .student-name{
+        font-size: 20px;
+    }
+}
+
