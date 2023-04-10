@@ -1,16 +1,3 @@
-body{
-    height: 100vh;
-    display: grid;
-    grid-template-areas: "content";
-}
-
-main{
-    display: flex;
-    height: 68.5%;
-    align-items: center;
-    justify-content: center;
-    grid-template-areas: "content";
-}
 
 @media (max-width:960px){
 
@@ -41,6 +28,6 @@ main{
         "content"
         "cards" ;
         grid-template-rows: 1fr 1fr;
-        height: 125vh;
+        height: 90vh;
     }
 }

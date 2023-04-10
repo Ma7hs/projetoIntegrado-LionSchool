@@ -43,12 +43,6 @@
         grid-template-areas: 
         "content"
         "cards" ;
-        grid-template-columns: 1fr 1fr;
-    }
-    .container{
-        gap: 40px;
-        margin-top: 12%;
-        margin-left: 25%;
     }
     .card{
         width: 330px;
@@ -69,8 +63,7 @@
         display: grid;
         grid-area: cards;
         gap: 40px;
-        align-items: center;
-     
+        place-items: center;
     }
 
     .card{

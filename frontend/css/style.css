@@ -1,69 +1,81 @@
-:root{
-    --primary-color:  #3347B0;
+:root {
+    --primary-color: #3347B0;
 }
 
-html, body{
-    display: flex;
+html,
+body {
+    display: grid;
+    grid-template-rows: 100px 1fr 140px;
     overflow: hidden;
-    height: 100%;
+    height: 100vh;
     width: 100%;
 }
 
 
-header{
+header {
     display: flex;
     flex-direction: row;
     background-color: var(--primary-color);
-    height: 15%
 }
 
-main{
+main {
     display: flex;
-    height: 70%;
     align-items: center;
     justify-content: center;
+
 }
 
-footer{
-    display: flex; 
+footer {
+    display: flex;
     align-items: center;
     justify-content: space-evenly;
     background-color: var(--primary-color);
-    height: 17%;
     color: white;
     font-size: 1rem;
+
 }
 
 footer p a:hover {
     font-style: oblique;
 }
 
-@media (max-width:960px){
+@media (max-width:960px) {
+
+    body {
+        width: 100%;
+    }
 
     header{
-        height: 90px;
-
+        width: 100%;
     }
-    footer{
+
+    main{
+        display: grid;
+        place-content: center;
+        place-items: center;
+        width: 100%;
+        text-align: center;
+    }
+
+    footer {
         height: 10rem;
-        padding-left: 3.86rem;
-        padding-right: 3.86rem;
     }
 }
 
-@media (max-width: 640px){
+@media (max-width: 640px) {
     
-    header{
-        height: 80px;
+    body {
+        overflow-y: scroll;
     }
-    footer{
+
+    footer {
         height: 42rem;
         display: grid;
-        grid-template-areas: 
-        "contact"
-        "social"
-        "copyright"; 
-        grid-template-columns: 1fr; 
+        grid-template-areas:
+            "contact"
+            "social"
+            "copyright";
+        grid-template-columns: 1fr;
         grid-template-rows: 1fr 2fr 1fr;
     }
 }

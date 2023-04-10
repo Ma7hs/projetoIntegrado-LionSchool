@@ -14,7 +14,7 @@ header{
     display: flex;
     flex-direction: row;
     background-color: var(--primary-color);
-    height: 15%
+    height: 15%;
 }
 
 main{
@@ -85,6 +85,8 @@ footer p a:hover {
     font-size: 18px;
     color: var(--primary-color);
 }
+
+
 @media (max-width:960px){
 
 }
