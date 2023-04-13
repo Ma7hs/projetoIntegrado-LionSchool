@@ -10,7 +10,7 @@ export const fetchData = async () => {
 
 export const fetchStudent = async (turma, status) => {
     // const url = `https://lion-school.onrender.com/v1/lion-school/${turma}/alunos/${status}`
-    const url = `http://localhost:8080/v1/lion-school/${turma}/alunos/${status}`
+    const url = `http://localhost:8080/v1/lion-school/alunos/${turma}/${status}`
     const response = await fetch(url)
     const data = await response.json()
     return {...data}

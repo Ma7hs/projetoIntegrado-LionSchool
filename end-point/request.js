@@ -65,7 +65,7 @@ app.get(`/v1/lion-school/alunos/:matricula`, cors(), async function (request, re
     response.json(info_aluno)
 })
 
-app.get(`/v1/lion-school/:curso/alunos/:status`, cors(), async function (request, response, next) {
+app.get(`/v1/lion-school/alunos/:curso/:status`, cors(), async function (request, response, next) {
     let curso = request.params.curso.toUpperCase()
     let status = request.params.status.charAt(0).toUpperCase() + request.params.status.slice(1)
     let alunos 
