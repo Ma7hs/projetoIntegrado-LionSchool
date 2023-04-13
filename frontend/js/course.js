@@ -46,7 +46,7 @@ const createCardAluno = (aluno) => {
     cardAluno.target = 'blank_'
     if (aluno.status == "Finalizado") {
         cardAluno.classList.add('students__finished')
-    } else {
+    } else {    
         cardAluno.classList.add('students__studying')
     }
 

@@ -11,8 +11,9 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 36%;
+    width: 30%;
 }
+
 
 .blue-text {
     color: #3347B0;

@@ -4,7 +4,7 @@ const matriculaALuno = localStorage.getItem('id_cardAluno')
 const getStudentInformartions = (matriculaALuno) => {
 
   const fetchData = async () => {
-    const url = `https://lion-school.onrender.com/v1/lion-school/status/disciplinas/${matriculaALuno}`;
+    const url = `https://teste-lion.onrender.com/v1/lion-school/status/disciplinas/${matriculaALuno}`;
     // const url = `http://localhost:8080/v1/lion-school/status/disciplinas/${matriculaALuno}`;
     const response = await fetch (url);
     const data = await response.json();
