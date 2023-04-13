@@ -11,6 +11,12 @@ A atividade tem como objetivo integrar as disciplinas de PWFE (Programação web
 
 O projeto é o gerenciamento da escola Lion School, deverá ser realizado tanto o back-end como o front-end.
 
+---
+
+### Figma
+
+Link do [figma](https://www.figma.com/file/c2Kz6BUJN6QNGYMRabvOqj/Untitled?node-id=0-1&t=1QSq4RGwzLtWuXEu-0).
+
 
 ## Tecnologias utilizadas
 - CSS
