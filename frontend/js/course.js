@@ -39,11 +39,11 @@ const createTitle = () => {
 
 const createCardAluno = (aluno) => {
     const cardAluno = document.createElement('a')
-    const host = window.location.protocol + '//' + window.location.host;
-    const studentPath = '/frontend/pages/student.html';
-    cardAluno.href = host + studentPath;
+    // const host = window.location.protocol + '//' + window.location.host;
+    // const studentPath = '/frontend/pages/student.html';
+    // cardAluno.href = host + studentPath;
+    cardAluno.href = "../pages/student.html"
     cardAluno.target = 'blank_'
-
     if (aluno.status == "Finalizado") {
         cardAluno.classList.add('students__finished')
     } else {

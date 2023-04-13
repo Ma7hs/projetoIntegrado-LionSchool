@@ -1,21 +1,3 @@
-
-@media (max-width:960px){
-
-    body{
-        display: flex;
-        height: 100vh;
-    }
-    main{
-        display: grid;
-        grid-template-areas: 
-        "content"
-        "cards" ;
-        grid-template-columns: 1fr 1fr;
-        height: 69.3vh;
-        padding: 5%;
-    }
-}
-
 @media (max-width: 640px){
     
     body{

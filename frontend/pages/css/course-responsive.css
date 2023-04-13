@@ -77,14 +77,12 @@
     }
 
     .contact {
-        grid-area: contact;
         gap: 0.5rem;
         align-items: center;
         margin-top: 50px;
     }
 
     .social-container {
-        grid-area: social;
         height: 85%;
     }
 
@@ -113,7 +111,6 @@
     .copyrigth {
         display: grid;
         place-items: center;
-        grid-area: copyright;
         font-size: 18px;
         width: 300px;
 
