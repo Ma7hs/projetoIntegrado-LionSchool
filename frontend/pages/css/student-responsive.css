@@ -12,13 +12,7 @@
 
 
     main{
-        display: grid;
-        grid-template-areas: 
-        "informations"
-        "chart";
-        grid-template-rows: 1fr; 
-        grid-template-rows: 1fr 1fr;
-        height: 100vh;
+        display: flex;
         place-items: center;
     }
 
@@ -30,6 +24,7 @@
         height: 80vh;
         width: 100%;
         gap: 100px;
+        margin-top: 40px;
     }
 
     canvas{

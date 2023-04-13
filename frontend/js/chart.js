@@ -81,7 +81,7 @@ const getStudentInformartions = (matriculaALuno) => {
 
     const studentName = document.createElement('p')
     if(palavras.length >= 4){
-      studentName.style.fontSize = '22px'
+      studentName.style.fontSize = '18px'
     }
     studentName.textContent = nomeFormatado
 

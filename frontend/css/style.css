@@ -39,43 +39,25 @@ footer p a:hover {
     font-style: oblique;
 }
 
-@media (max-width:960px) {
-
-    body {
-        width: 100%;
-    }
-
-    header{
-        width: 100%;
-    }
-
-    main{
-        display: grid;
-        place-content: center;
-        place-items: center;
-        width: 100%;
-        text-align: center;
-    }
-
-    footer {
-        height: 10rem;
-    }
-}
-
 @media (max-width: 640px) {
     
     body {
-        overflow-y: scroll;
+        overflow-x: hidden
     }
 
+    main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
     footer {
-        height: 42rem;
-        display: grid;
-        grid-template-areas:
-            "contact"
-            "social"
-            "copyright";
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 2fr 1fr;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 70vh;
+        width: 100%;
+        gap: 100px;
     }
 }
