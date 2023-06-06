@@ -2,7 +2,7 @@ var cursos = [
     {
         "nome"  :   "001 - Técnico em Desenvolvimento de Sistemas",
         "sigla" :   "DS",
-        "icone" :   "https://icons8.com.br/icon/TEp2t0ShAlfP/programa%C3%A7%C3%A3o",
+        "icone" :   "https://image.shutterstock.com/image-vector/api-interface-vector-icon-600w-659203513.jpg",
         "carga" :   "1200",
     },
     {
